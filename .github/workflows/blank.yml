@@ -36,3 +36,21 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  other:
+    strategy:
+      matrix:
+        message:
+        - one
+        - two
+        - three
+    uses: ./.github/workflows/nested.yaml
+    with:
+      hello-message: "Hi ${{ matrix.message }}"
+
+  dependant:
+    needs: [other] 
+    uses: ./.github/workflows/nested.yaml
+    with:
+      hello-message: "Dependant"
+    
+    
