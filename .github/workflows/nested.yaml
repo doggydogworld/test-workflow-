@@ -9,6 +9,6 @@ on:
 jobs:
   message:
     environment: build/prod
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
     - run: echo ${{ inputs.hello-message }}
