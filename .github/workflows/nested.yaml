@@ -1,0 +1,14 @@
+on:
+  workflow_call:
+    inputs:
+      hello-message:
+        description: Message to echo
+        type: string
+        default: hello
+
+jobs:
+  message:
+    environment: build/prod
+    runs-on: ubuntu
+    steps:
+    - run: echo ${{ inputs.hello-message }}
