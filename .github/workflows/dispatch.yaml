@@ -29,9 +29,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: "correlation ID: ${{ inputs.correlation-id }}"
         run: |
-          echo correlation ID: ${{ inputs.correlation-id }}"
+          echo "correlation ID: ${{ inputs.correlation-id }}"
 
       # Runs a set of commands using the runners shell
       - name: echo message
         run: |
-          echo ${{ inputs.message }}
+          echo "${{ inputs.message }}"
